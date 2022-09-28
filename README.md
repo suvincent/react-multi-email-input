@@ -1,10 +1,12 @@
 # react-multi-email-input
-(fork from react-multi-email)
+(fork from [react-multi-email](https://www.npmjs.com/package/react-multi-email))
 
-A react component to format multiple email as the user types.
+A react component to format multiple email easily.
 
 - Simple code
 - No dependency
+## demo
+<img src="https://raw.githubusercontent.com/suvincent/react-multi-email-input/main/doc/demo.gif" />
 
 ## Installation
 
@@ -16,25 +18,23 @@ npm install react-multi-email-input
 
 ``` jsx
 import React, { useState } from "react";
-import './lib/style.css'
-import { ReactMultiEmailInput } from './lib';
+import { ReactMultiEmailInput } from 'react-multi-email-input';
+import 'react-multi-email-input/dist/style.css'
 
 function App() {
   const [emailList, setEmailList] = useState([])
-
   return (
-    <div style={{textAlign: "center"}}>
-      <header className="App-header">
+    <>
         <p>react multi emails input</p>
         <div>
-          <ReactMultiEmailInput
-            placeholder="placeholder"
-            emails={emailList}
-            setEmails={setEmailList}
-        /></div>
+            <ReactMultiEmailInput
+                placeholder="placeholder"
+                emails={emailList}
+                setEmails={setEmailList}
+            />
+        </div>
         {emailList && <p id="result">{emailList.join(', ') || 'empty'}</p>}
-      </header>
-    </div>
+    </>
   );
 }
 
