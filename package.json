@@ -1,6 +1,6 @@
 {
   "name": "react-multi-email-input",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "react-multi-email-input",
   "author": "suvincent",
   "keywords": ["react", "components", "email"],
@@ -11,8 +11,16 @@
       "type": "git",
       "url": "git+https://github.com/suvincent/react-multi-email-input.git"
   },
-  "dependencies": {
+  "peerDependencies": {
+    "react": ">=16.4.0",
+    "react-dom": ">=16.4.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
     "@babel/polyfill": "^7.12.1",
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -44,10 +52,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.19.3",
-    "@babel/core": "^7.19.3",
-    "@babel/preset-env": "^7.19.3"
   }
 }

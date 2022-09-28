@@ -3,7 +3,7 @@ import './lib/style.css'
 import { ReactMultiEmailInput } from './lib';
 
 function App() {
-  const [emailList, setEmailList] = useState([])
+  const [emailList, setEmailList] = useState(null)
 
   return (
     <div style={{textAlign: "center"}}>

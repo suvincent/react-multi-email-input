@@ -36,6 +36,9 @@ function ReactMultiEmailInput(_ref) {
   const [inputValue, setInput] = React.useState('');
   const [focused, setFocus] = React.useState(false);
   const emailInputRef = /*#__PURE__*/React.createRef();
+  React.useEffect(() => {
+    if (!emails) setEmails([]);
+  }, []);
 
   function findEmailAddress(value) {
     let isEnter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
@@ -165,7 +168,7 @@ function ReactMultiEmailInput(_ref) {
   }
 
   return /*#__PURE__*/React.createElement("div", {
-    className: "".concat(className, " ").concat(noClass ? '' : 'react-multi-email', " ").concat(focused ? 'focused' : '', " ").concat(inputValue === '' && emails.length === 0 ? 'empty' : ''),
+    className: "".concat(className, " ").concat(noClass ? '' : 'react-multi-email', " ").concat(focused ? 'focused' : '', " ").concat(inputValue === '' && (emails === null || emails === void 0 ? void 0 : emails.length) === 0 ? 'empty' : ''),
     style: style,
     onClick: () => {
       if (emailInputRef.current) {
@@ -174,7 +177,7 @@ function ReactMultiEmailInput(_ref) {
     }
   }, placeholder ? /*#__PURE__*/React.createElement("span", {
     "data-placeholder": true
-  }, placeholder) : null, emails.map((email, index) => MailLabel(email, index, removeEmail)), /*#__PURE__*/React.createElement("input", {
+  }, placeholder) : null, emails === null || emails === void 0 ? void 0 : emails.map((email, index) => MailLabel(email, index, removeEmail)), /*#__PURE__*/React.createElement("input", {
     ref: emailInputRef,
     type: "text",
     value: inputValue,

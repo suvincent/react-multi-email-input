@@ -8,6 +8,10 @@ function ReactMultiEmailInput({ emails, setEmails, placeholder, className, style
   const [focused, setFocus] = React.useState(false)
   const emailInputRef = React.createRef();
 
+  React.useEffect(()=>{
+    if(!emails)setEmails([])
+  },[])
+
   function findEmailAddress(value, isEnter = false) {
     let validEmails = [];
     let inputValue = '';
@@ -106,7 +110,7 @@ function ReactMultiEmailInput({ emails, setEmails, placeholder, className, style
   return (
     <div
       className={`${className} ${noClass ? '' : 'react-multi-email'} ${focused ? 'focused' : ''
-        } ${inputValue === '' && emails.length === 0 ? 'empty' : ''}`}
+        } ${inputValue === '' && emails?.length === 0 ? 'empty' : ''}`}
       style={style}
       onClick={() => {
         if (emailInputRef.current) {
@@ -115,7 +119,7 @@ function ReactMultiEmailInput({ emails, setEmails, placeholder, className, style
       }}
     >
       {placeholder ? <span data-placeholder>{placeholder}</span> : null}
-      {emails.map((email, index) =>
+      {emails?.map((email, index) =>
         MailLabel(email, index, removeEmail),
       )}
       <input
