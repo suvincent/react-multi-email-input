@@ -1,22 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import './lib/style.css'
+import { ReactMultiEmailInput } from './lib';
 
 function App() {
+  const [emailList, setEmailList] = useState([])
+
   return (
-    <div className="App">
+    <div style={{textAlign: "center"}}>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>react multi emails input</p>
+        <div>
+          <ReactMultiEmailInput
+            placeholder="placeholder"
+            emails={emailList}
+            setEmails={setEmailList}
+        /></div>
+        {emailList && <p id="result">{emailList.join(', ') || 'empty'}</p>}
       </header>
     </div>
   );
