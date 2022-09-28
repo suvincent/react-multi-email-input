@@ -4,7 +4,6 @@
   "description": "react-multi-email-input",
   "author": "suvincent",
   "keywords": ["react", "components", "email"],
-  "private": true,
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [ "dist", "README.md" ],
